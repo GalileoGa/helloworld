@@ -1,4 +1,3 @@
-package mainTest;
 
 public class Derived extends Base {
 	public String name = "Derived";
@@ -12,7 +11,14 @@ public class Derived extends Base {
 	}
 	
 	public static void main(String[] args) {
-		new Derived();
+		Base base = new Derived();
+		// derived name is null
+		// derived name is derived
+		
+		base.tellName();
+		
+		// 动态绑定调用子类方法，此时子类成员变量没有初始化
+		// 调用自己方法，此时对象已经创建，成员变量已经初始化
 	}
 
 }
